@@ -1,0 +1,23 @@
+<nav>
+  <ul>
+    <li><%= link_to "Authors", authors_path %></li>
+    <li><%= link_to "Books", books_path %></li>
+  </ul>
+</nav>
+  <%= link_to "New Author", new_author_path %>
+
+<% if @authors.any? %>
+  <h1>Authors List</h1>
+  <ul>
+    <% @authors.each do |author| %>
+      <li>
+        <p><strong>Name:</strong> <%= author.name %></p>
+        <p><strong>Deceased:</strong> <%= author.deceased%></p>
+        <p><strong>Age:</strong> <%= author.age %></p>
+        <p><strong>Created at:</strong> <%= author.created_at %></p>
+        <p><strong>Updated at:</strong> <%= author.updated_at %></p>
+        <%= link_to "View Books", author_books_path(author) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

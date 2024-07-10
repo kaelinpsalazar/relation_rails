@@ -1,0 +1,7 @@
+<nav>
+  <%= link_to "books", books_path %>
+</nav>
+<h1><%= @book.title %></h1>
+<p><strong>Genre:<strong> <%= @book.genre %></p>
+<p><strong>Published:</strong> <%= @book.is_published ? 'Yes' : 'No' %></p>
+<p><strong>Publication Year:</strong> <%= @book.publication_year %></p>

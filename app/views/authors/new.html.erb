@@ -1,0 +1,19 @@
+<h1>New Author</h1>
+
+<%= form_with model: @author, url: authors_path, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :deceased %>
+    <%= form.check_box :deceased %>
+  </div>
+  <div>
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+  <div>
+    <%= form.submit "Create Author" %>
+  </div>
+<% end %>

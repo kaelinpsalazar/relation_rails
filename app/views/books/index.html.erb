@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li><%= link_to "Authors", authors_path %></li>
+    <li><%= link_to "Books", books_path %></li>
+  </ul>
+</nav>
+<ul>
+  <% @books.each do |book| %>
+    <li><%= book.title %></li>
+    <li><%= book.genre %></li>
+    <li><%= book.is_published %></li>
+    <li><%= book.publication_year %></li>
+  <% end %>
+</ul>

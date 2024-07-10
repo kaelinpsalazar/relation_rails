@@ -1,0 +1,24 @@
+<nav>
+  <%= link_to "Books", books_path %>
+</nav>
+
+<h1>Author Details</h1>
+<p><strong>Name:</strong> <%= @author.name %></p>
+<p><strong>Deceased:</strong> <%= @author.deceased ? 'Yes' : 'No' %></p>
+<p><strong>Age:</strong> <%= @author.age %></p>
+
+<% if @books.any? %>
+  <h2>Books by <%= @author.name %> :</h2>
+  <ul>
+    <% @books.each do |book| %>
+      <li>
+        <h3><%= book.title %></h3>
+        <p><strong>Genre:</strong> <%= book.genre %></p>
+        <p><strong>Published:</strong> <%= book.is_published? ? 'Yes' : 'No' %></p>
+        <p><strong>Publication Year:</strong> <%= book.publication_year %></p>
+      </li>
+    <% end %>
+  </ul>
+  <p><strong>Total Books:</strong> <%= @books.count %></p>
+
+<% end %>
